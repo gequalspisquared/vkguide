@@ -1,0 +1,25 @@
+[submodule "lib/SDL"]
+	path = lib/SDL
+	url = git@github.com:libsdl-org/SDL.git
+	branch = SDL2
+[submodule "lib/fastgltf"]
+	path = lib/fastgltf
+	url = git@github.com:spnda/fastgltf.git
+[submodule "lib/fmt"]
+	path = lib/fmt
+	url = git@github.com:fmtlib/fmt.git
+[submodule "lib/glm"]
+	path = lib/glm
+	url = git@github.com:g-truc/glm.git
+[submodule "lib/imgui"]
+	path = lib/imgui
+	url = git@github.com:ocornut/imgui.git
+[submodule "lib/vk-bootstrap"]
+	path = lib/vk-bootstrap
+	url = git@github.com:charles-lunarg/vk-bootstrap.git
+[submodule "lib/VulkanMemoryAllocator"]
+	path = lib/VulkanMemoryAllocator
+	url = git@github.com:GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator.git
+[submodule "lib/stb"]
+	path = lib/stb
+	url = git@github.com:nothings/stb.git
