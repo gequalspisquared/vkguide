@@ -55,6 +55,7 @@ public:
 
 	//draw loop
 	void draw();
+	void draw_background(VkCommandBuffer cmd);
 
 	//run main loop
 	void run();
@@ -80,6 +81,12 @@ public:
 	uint32_t _graphicsQueueFamily;
 
 	DeletionQueue _mainDeletionQueue;
+
+	VmaAllocator _allocator;
+
+	// draw resources
+	AllocatedImage _drawImage;
+	VkExtent2D _drawExtent;
 
 private:
 	void init_vulkan();
