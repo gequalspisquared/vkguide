@@ -6,6 +6,22 @@
 #include <vk_types.h>
 #include <vk_descriptors.h>
 
+struct ComputePushConstants {
+	glm::vec4 data1;
+	glm::vec4 data2;
+	glm::vec4 data3;
+	glm::vec4 data4;
+};
+
+struct ComputeEffect {
+	const char* name;
+
+	VkPipelineLayout layout;
+	VkPipeline pipeline;
+
+	ComputePushConstants data;
+};
+
 struct DeletionQueue {
 	std::deque<std::function<void()>> deletors;
 
@@ -97,6 +113,9 @@ public:
 
 	VkPipeline _gradientPipeline;
 	VkPipelineLayout _gradientPipelineLayout;
+
+	std::vector<ComputeEffect> backgroundEffects;
+	int currentBackgroundEffect{0};
 
 	// immediate submit structures
 	VkFence _immFence;
