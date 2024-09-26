@@ -5,6 +5,7 @@
 
 #include <vk_types.h>
 #include <vk_descriptors.h>
+#include <vk_loader.h>
 
 struct ComputePushConstants {
 	glm::vec4 data1;
@@ -105,6 +106,7 @@ public:
 
 	// draw resources
 	AllocatedImage _drawImage;
+	AllocatedImage _depthImage;
 	VkExtent2D _drawExtent;
 
 	DescriptorAllocator globalDescriptorAllocator;
@@ -115,8 +117,8 @@ public:
 	VkPipeline _gradientPipeline;
 	VkPipelineLayout _gradientPipelineLayout;
 
-	VkPipeline _trianglePipeline;
-	VkPipelineLayout _trianglePipelineLayout;
+	// VkPipeline _trianglePipeline;
+	// VkPipelineLayout _trianglePipelineLayout;
 
 	VkPipeline _meshPipeline;
 	VkPipelineLayout _meshPipelineLayout;
@@ -129,7 +131,8 @@ public:
 
 	GPUMeshBuffers uploadMesh(std::span<uint32_t> indices, std::span<Vertex> vertices);
 
-	GPUMeshBuffers rectangle;
+	// GPUMeshBuffers rectangle;
+	std::vector<std::shared_ptr<MeshAsset>> testMeshes;
 
 	// immediate submit structures
 	VkFence _immFence;
@@ -146,7 +149,7 @@ private:
 	void init_descriptors();
 	void init_pipelines();
 	void init_background_pipelines();
-	void init_triangle_pipeline();
+	// void init_triangle_pipeline();
 	void init_mesh_pipeline();
 	void init_imgui();
 	void init_default_data();
