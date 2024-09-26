@@ -80,6 +80,8 @@ public:
 	//run main loop
 	void run();
 
+	bool resize_requested = false;
+
 	VkInstance _instance;
 	VkDebugUtilsMessengerEXT _debug_messenger;
 	VkPhysicalDevice _chosenGPU;
@@ -108,6 +110,7 @@ public:
 	AllocatedImage _drawImage;
 	AllocatedImage _depthImage;
 	VkExtent2D _drawExtent;
+	float renderScale = 1.0f;
 
 	DescriptorAllocator globalDescriptorAllocator;
 
@@ -155,5 +158,6 @@ private:
 	void init_default_data();
 
 	void create_swapchain(uint32_t width, uint32_t height);
+	void resize_swapchain();
 	void destroy_swapchain();
 };
